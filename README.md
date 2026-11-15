@@ -19,3 +19,13 @@ To use your own list, save an `.ir` file as `SD Card/apps_data/tv_off/codes.ir`.
 
 - Many TVs use the same code for power on and power off, so a TV that is already off may turn on.
 - Range depends on the built-in IR LEDs. Aim directly at the TV.
+
+## Building
+
+Build tooling is managed with [uv](https://docs.astral.sh/uv/). It installs Python and uFBT into a local `.venv`; nothing goes into your system Python.
+
+```
+brew install uv         # once
+uv run ufbt             # build -> dist/tv_off.fap
+uv run ufbt launch      # build, install over USB and start the app
+```
